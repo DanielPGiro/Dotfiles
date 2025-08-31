@@ -57,6 +57,10 @@ autocmd VimEnter * terminal
 autocmd VimEnter * resize 5 | wincmd p
 autocmd QuitPre * if winnr('$') > 1 | qall! | endif
 
+
+" Need to add Copy and Paste possibly
+
+
 " RTL Stuff
 au Filetype vhdl setl sw=2 sts=2 ts=2 et
 au Filetype verilog setl sw=2 sts=2 ts=2 et
