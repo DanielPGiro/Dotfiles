@@ -5,8 +5,8 @@ call plug#begin()
     " List of Plugins
     Plug 'tpope/vim-sensible'
     Plug 'preservim/nerdtree'
-    Plug 'nordtheme/vim'
     Plug 'vim-airline/vim-airline'
+    Plug 'articicestudio/nord-vim'
 
 call plug#end()
 
@@ -27,7 +27,7 @@ let g:nord_bold_vertical_split_line = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_italic_comments = 1
 let g:nord_underline = 1
-"set termguicolors
+set termguicolors
 colorscheme nord
 
 
@@ -50,8 +50,10 @@ set wildmenu
 set wildmode=longest,list,full
 set history=1000
 
+" Save
 noremap WW :w<CR>
 
+" Terminal
 set splitbelow
 autocmd VimEnter * terminal 
 autocmd VimEnter * resize 5 | wincmd p
