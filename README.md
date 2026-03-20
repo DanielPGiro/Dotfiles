@@ -1,1 +1,1 @@
-Simple .vimrc for using different machines
+Simple .vimrc for using on different machines
