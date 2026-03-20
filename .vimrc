@@ -49,12 +49,24 @@ set number
 set relativenumber
 set incsearch
 set nohlsearch
+set clipboard=unnamedplus
 set wildmenu
 set wildmode=longest,list,full
 set history=1000
 "set cursorline
 
-noremap WW :w<CR>
+" auto completes
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+
+" Remaps
+noremap ; :
+
+" Ctrl + a to select all
+nnoremap <C-a> ggVG
 
 " ---- Terminal ---- "
 "set splitbelow
@@ -63,23 +75,23 @@ noremap WW :w<CR>
 "autocmd QuitPre * if winnr('$') > 1 | qall! | endif
 
 " ---- RTL Stuff ---- "
-"au Filetype vhdl setl sw=2 sts=2 ts=2 et
-"au Filetype verilog setl sw=2 sts=2 ts=2 et
-"au Filetype systemverilog setl sw=2 sts=2 ts=2 et
-"autocmd BufEnter *.vhdl,*.vhd set ignorecase
-"autocmd BufEnter *.svh,*.sv set filetype=systemverilog
-"autocmd BufEnter *.vh set filetype=verilog
-"autocmd BufEnter *.xdc set filetype=tcl
-""Set file format of vhdl/verilog/systemverilog files to unix
-"autocmd BufWrite *.vhdl,*.vhd set ff=unix
-"autocmd BufWrite *.v,*sv,*.svh set ff=unix
-""See indent.txt
-"let g:vhdl_indent_genportmap = 0
-"function! Filecleanup()
-""Remove ^M from end of lines
-"%s/^M$//ge
-""Remove Trailing Spaces
-"%s/\s\+$//ge
-""Remove Tabs
-"retab
-"endfunction 
+au Filetype vhdl setl sw=2 sts=2 ts=2 et
+au Filetype verilog setl sw=2 sts=2 ts=2 et
+au Filetype systemverilog setl sw=2 sts=2 ts=2 et
+autocmd BufEnter *.vhdl,*.vhd set ignorecase
+autocmd BufEnter *.svh,*.sv set filetype=systemverilog
+autocmd BufEnter *.vh set filetype=verilog
+autocmd BufEnter *.xdc set filetype=tcl
+"Set file format of vhdl/verilog/systemverilog files to unix
+autocmd BufWrite *.vhdl,*.vhd set ff=unix
+autocmd BufWrite *.v,*sv,*.svh set ff=unix
+"See indent.txt
+let g:vhdl_indent_genportmap = 0
+function! Filecleanup()
+"Remove ^M from end of lines
+%s/^M$//ge
+"Remove Trailing Spaces
+%s/\s\+$//ge
+"Remove Tabs
+retab
+endfunction 
